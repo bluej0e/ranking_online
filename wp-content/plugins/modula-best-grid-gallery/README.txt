@@ -2,15 +2,17 @@
 Contributors: machothemes, silkalns
 Tags: best gallery plugin, image gallery, photo gallery, responsive gallery, wordpress gallery plugin, wordpress portfolio plugin, masonry gallery, fancy gallery, media gallery, mosaic gallery, polaroid gallery, portfolio gallery
 Requires at least: 4.6
-Tested up to: 5.3
+Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 2.1.6
+Stable tag: 2.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Photo Gallery by Modula - an advanced solution for Photo Gallery users. Create beautiful image galleries in minutes or less. 
 
 == Description == 
+
+**Modula Image Gallery** is a standalone plugin built, maintained & operated by the friendly folks over at [MachoThemes](https://www.machothemes.com/?utm_source=wordpress.org&utm_medium=web&utm_campaign=Modula%20Lite).
 
 With Modula, it's easier than ever to build stunning [lightbox galleries](https://wp-modula.com/demo/lightbox-gallery?utm_source=wordpress.org&utm_medium=web&utm_campaign=Modula%20Lite), masonry grids, custom grids and more in no more than a few clicks right from the WordPress dashboard. 
 
