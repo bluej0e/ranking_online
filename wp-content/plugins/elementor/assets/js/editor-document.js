@@ -1,4 +1,4 @@
-/*! elementor - v2.8.2 - 16-12-2019 */
+/*! elementor - v2.8.3 - 01-01-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -7058,6 +7058,7 @@ function (_Marionette$ItemView) {
         container: elementor.getPreviewContainer(),
         columns: 1,
         options: {
+          at: this.getOption('at'),
           // BC: Deprecated since 2.8.0 - use `$e.events`.
           trigger: {
             beforeAdd: 'section:before:drop',

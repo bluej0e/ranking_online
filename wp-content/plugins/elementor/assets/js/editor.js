@@ -1,4 +1,4 @@
-/*! elementor - v2.8.2 - 16-12-2019 */
+/*! elementor - v2.8.3 - 01-01-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -8150,6 +8150,7 @@ function (_Marionette$ItemView) {
         container: elementor.getPreviewContainer(),
         columns: 1,
         options: {
+          at: this.getOption('at'),
           // BC: Deprecated since 2.8.0 - use `$e.events`.
           trigger: {
             beforeAdd: 'section:before:drop',
@@ -10860,7 +10861,7 @@ var App = Marionette.Application.extend({
   backgroundClickListeners: {
     popover: {
       element: '.elementor-controls-popover',
-      ignore: '.elementor-control-popover-toggle-toggle, .elementor-control-popover-toggle-toggle-label, .select2-container'
+      ignore: '.elementor-control-popover-toggle-toggle, .elementor-control-popover-toggle-toggle-label, .select2-container, .pcr-app'
     },
     tagsList: {
       element: '.elementor-tags-list',
@@ -15758,6 +15759,7 @@ function (_Component) {
       }, elementor.translate('icons_promotion')), _react.default.createElement("a", {
         href: elementor.config.icons.goProURL,
         id: "elementor-icons-manager__promotion__link",
+        className: "elementor-button elementor-button-default elementor-button-go-pro",
         target: "_blank",
         rel: "noopener noreferrer"
       }, elementor.translate('go_pro')));
