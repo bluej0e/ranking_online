@@ -2178,6 +2178,9 @@ body.elementor-page .elementor-widget-menu-anchor {
   .elementor-widget-text-editor .elementor-drop-cap-letter {
     display: inline-block; }
 
+.elementor-widget-toggle .elementor-widget-container {
+  overflow: hidden; }
+
 .elementor-toggle {
   text-align: left; }
   .elementor-toggle .elementor-tab-title {

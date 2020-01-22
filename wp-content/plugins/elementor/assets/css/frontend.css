@@ -1,4 +1,4 @@
-/*! elementor - v2.8.3 - 01-01-2020 */
+/*! elementor - v2.8.4 - 19-01-2020 */
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
@@ -2711,6 +2711,9 @@ body.elementor-page .elementor-widget-menu-anchor {
   font-size: 50px; }
   .elementor-widget-text-editor .elementor-drop-cap-letter {
     display: inline-block; }
+
+.elementor-widget-toggle .elementor-widget-container {
+  overflow: hidden; }
 
 .elementor-toggle {
   text-align: left; }
