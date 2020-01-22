@@ -65,6 +65,12 @@ class Form_Shortcode
      */
     public $load_grecaptcha = false;
     /**
+     * $args sent from the shortcode
+     *
+     * @var array
+     */
+    protected $args = [];
+    /**
      * Creates an instance of the form shortcode
      *
      * @param [Array] $args
@@ -87,7 +93,12 @@ class Form_Shortcode
         foreach ($fields as $field) {
             if ($field->id === 'grecaptcha') {
                 $this->load_grecaptcha = true;
+			}
+
+            if (isset($field->properties->name) && isset($args[$field->properties->name])) {
+                $field->properties->default = $args[$field->properties->name];
             }
+
             $this->fields[$field->internalId] = $field;
         }
 

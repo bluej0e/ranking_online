@@ -238,3 +238,20 @@
         }
     }
 }
+
+#kaliforms_dashboard_widget {
+    .inside {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    .action-buttons {
+        text-align: center;
+    }
+
+    img {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+    }
+}

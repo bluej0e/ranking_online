@@ -221,7 +221,7 @@ const FormInfo = (props) => {
 						value={thankYouMessage}
 						name="kaliforms[thank_you_message]"
 						onChange={e => setThankYouMessage(e.target.value)}
-						multiline={true}
+						// multiline={true}
 						variant="filled"
 						fullWidth={true}
 						InputProps={{

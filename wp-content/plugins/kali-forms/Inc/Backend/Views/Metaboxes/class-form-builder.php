@@ -29,7 +29,8 @@ class Form_Builder extends Metabox
     {
         $html = '<div class="kaliforms-preloader">';
         $html .= '<div class="kaliforms-skeleton-app-bar">';
-        $html .= '<img src="' . KALIFORMS_URL . 'assets/img/logo.svg' . '" />';
+		$html .= '<img src="' . KALIFORMS_URL . 'assets/img/logo.svg' . '" />';
+		$html .= '<span class="skeleton-button"></span>';
         $html .= '<span class="skeleton-button"></span>';
         $html .= '<span class="skeleton-button"></span>';
         $html .= '</div>';

@@ -8,6 +8,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import SaveIcon from '@material-ui/icons/Save';
+import EmailIcon from '@material-ui/icons/Email';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -116,6 +117,10 @@ const App = (props) => {
 	const handleClick = (event, name) => {
 		let action = name.toLowerCase();
 		switch (action) {
+			case 'go-to-emails':
+				props.setUiAppBar('formSettings');
+				props.setUiSidebarSettings('emails');
+				break;
 			case 'delete':
 				document.querySelector('#delete-action a').click();
 				break;
@@ -206,6 +211,14 @@ const App = (props) => {
 							<Tab value="formSettings" label={KaliFormsObject.translations.appBar.formSettings} />
 						</Tabs>
 						<div style={{ marginLeft: 15 }}>
+							<Tooltip title={KaliFormsObject.translations.appBar.emails}>
+								<IconButton
+									onClick={(e) => handleClick(e, 'go-to-emails')}
+									color="inherit"
+								>
+									<EmailIcon />
+								</IconButton>
+							</Tooltip>
 							<Tooltip title={KaliFormsObject.translations.general.save}>
 								<IconButton
 									onClick={(e) => handleClick(e, 'save')}

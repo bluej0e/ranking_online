@@ -314,6 +314,10 @@ html.wp-toolbar {
             position: absolute;
             right: 80px;
 
+            &:first-of-type {
+                right: 125px;
+            }
+
             &:last-of-type {
                 right: 35px;
             }

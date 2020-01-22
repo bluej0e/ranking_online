@@ -4,7 +4,7 @@ Tags: contact form, contact form plugin, forms, form builder, custom form, conta
 Requires at least: 4.6
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,10 +88,11 @@ We know much of a problem form spam is which is why Kali Forms is designed to us
 ----
 
 = 3rd party or external service disclaimer =
+The plugin sends data (User action) to our website through an API Call (https://kaliforms.com/wp-json/kf/v1/uninstall-feedback) in order to send a uninstall feedback.
 
 The plugin connects to our website through an API call (https://kaliforms.com/wp-json/kf/v1/plugins) in order to request a list of available extensions.
 
-**Kali Forms does not send any data to our website, not do we collect information from the requests.**
+**Kali Forms does not send any data without consent or user action to our website, nor do we collect sensitive information from the requests.**
 
 Our full privacy policy can be found [here](https://kaliforms.com/privacy-policy/).
 
@@ -146,6 +147,21 @@ The easiest and recommended way to install is to click on 'Plugins' then 'Add Ne
 == Screenshots ==
 
 == Changelog ==
+1.5.0
+- Added a new filter that happens before file uploads
+- Added a review notice for wordpress.org
+- Added Email Settings page to improve and debug mail deliverability
+- Added a duplicate form button in the Forms listing
+- Added a dashboard widget
+- Added an email quick link in the form builder top navigation bar ( email icon )
+- Added possibility to send data through the shorcode e.g. [kaliform id="1" first-name="John" last-name="Doe"]
+- Added uninstall feedback
+- Added system checks
+- Several QOL adjustments
+
+1.4.0
+- Various bugs, fixes and QOL adjustments
+
 1.3.0
 - Added functionality to attach files uploaded through file upload fields to emails
 - Added functionality to attach files from uploaded media to emails (will be improved in the next update)

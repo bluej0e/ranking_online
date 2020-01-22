@@ -54,7 +54,12 @@ const theme = createMuiTheme({
 			root: {
 				padding: '20px 13px 2px 13px',
 			},
-			inputSelect: {
+			// inputSelect: {
+			// 	padding: '10px 27px 4px 0',
+			// }
+		},
+		MuiSelect: {
+			root: {
 				padding: '10px 27px 4px 0',
 			}
 		},

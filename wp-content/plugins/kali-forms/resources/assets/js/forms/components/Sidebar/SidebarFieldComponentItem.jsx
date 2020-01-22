@@ -1,12 +1,14 @@
 import React from 'react';
+import Badge from '@material-ui/core/Badge';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import { bindActionCreators } from 'redux';
 import connect from 'react-redux/es/connect/connect';
 import * as StoreActions from './../../store/actions'
-
+import { makeStyles } from '@material-ui/core/styles';
 const mapStateToProps = state => {
 	return {
 		loading: state.PageLoading,
@@ -39,7 +41,39 @@ const styles = {
 	paddingLeft: 15,
 }
 
+const useStyles = makeStyles(theme => {
+	return {
+		proButtonHolder: {
+			position: 'relative',
+			top: 15,
+			right: 7,
+			maxHeight: 48,
+			height: 48,
+			display: 'inline-block',
+		},
+		proButton: {
+			textAlign: 'center',
+			borderRadius: 10,
+			padding: '4px 8px',
+			fontSize: '.7rem',
+			fontWeight: 'bold',
+			color: '#fff',
+			background: theme.palette.secondary.main,
+			// boxShadow: theme.shadows[2],
+
+			'&:hover': {
+				background: theme.palette.secondary.light,
+				// borderColor: '#eee',
+				// background: '#fafafa',
+				// borderColor: theme.palette.primary.main,
+				// transition: 'all .25 ease-in-out'
+			}
+		}
+	}
+});
+
 const SidebarFieldComponentItem = (props) => {
+	const classes = useStyles();
 	/**
 	 * Add a field in the builder
 	 * SHOULD BE PARSED/STRINGIFY SO YOU FORGET OBJECT REFS
@@ -66,7 +100,6 @@ const SidebarFieldComponentItem = (props) => {
 		})
 		return returnItem + 1;
 	}
-
 	/**
 	 * Format object
 	 *
@@ -83,18 +116,39 @@ const SidebarFieldComponentItem = (props) => {
 		return properties;
 	}
 
+	const redirectToPricing = event => {
+		window.open('https://www.kaliforms.com/pricing?utm_source=formBuilder&utm_campaign=userInterests&utm_medium=proBadge', '_blank');
+	}
+
+	const redirectToPricingAction = () => {
+		return (
+			<span className={classes.proButtonHolder}>
+				<IconButton className={classes.proButton} onClick={() => redirectToPricing()}>
+					pro
+				</IconButton>
+			</span>
+		)
+	}
+
+	const addFieldAction = () => {
+		return (
+			<span style={{ position: 'relative', top: 4 }}>
+				<IconButton onClick={() => addField()}>
+					<AddIcon />
+				</IconButton>
+			</span>
+		)
+	}
+	const determineCourseOfAction = () => {
+		return typeof props.properties.pro !== 'undefined' && props.properties.pro ? redirectToPricingAction() : addFieldAction();
+	}
+
 	return (
 		<Card>
 			<CardHeader
 				style={{ padding: '6px 16px' }}
 				titleTypographyProps={{ variant: 'subtitle2' }}
-				action={
-					<span style={{ position: 'relative', top: 3 }}>
-						<IconButton onClick={() => addField()}>
-							<AddIcon />
-						</IconButton>
-					</span>
-				}
+				action={determineCourseOfAction()}
 				title={props.label}
 			/>
 		</Card>

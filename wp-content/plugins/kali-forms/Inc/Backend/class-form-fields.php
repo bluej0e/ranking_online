@@ -88,6 +88,8 @@ class Form_Fields
             ],
         ];
 
+        $fields = $this->set_upsell_fields($fields);
+
         /**
          * We can add / remove fields through this filter
          */
@@ -419,5 +421,51 @@ class Form_Fields
                 ],
             ]
         );
+    }
+
+    /**
+     * Adds the upsell fields
+     *
+     * @param [type] $fields
+     * @return void
+     */
+    protected function set_upsell_fields($fields)
+    {
+        if (defined('KALIFORMS_PRO_BASE')) {
+            return $fields;
+		}
+		
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Smart Text Output', 'kaliforms'),
+            'upsell_for' => 'smartTextOutput',
+            'pro' => true,
+        ]);
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Range', 'kaliforms'),
+            'upsell_for' => 'range',
+            'pro' => true,
+        ]);
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Date Time Picker', 'kaliforms'),
+            'upsell_for' => 'dateTimePicker',
+            'pro' => true,
+        ]);
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Choices', 'kaliforms'),
+            'upsell_for' => 'choices',
+            'pro' => true,
+        ]);
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Page Break', 'kaliforms'),
+            'upsell_for' => 'dateTimePicker',
+            'pro' => true,
+        ]);
+        $fields[1]['fields'][] = new BuilderFormFields\Upsell_Field([
+            'label' => esc_html__('Password', 'kaliforms'),
+            'upsell_for' => 'password',
+            'pro' => true,
+        ]);
+
+        return $fields;
     }
 }

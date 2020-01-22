@@ -4,9 +4,11 @@ namespace KaliForms\Inc\Backend\Posts;
 use KaliForms\Inc\Backend\JS_Vars;
 use KaliForms\Inc\Backend\Meta_Save;
 use KaliForms\Inc\Backend\Notifications;
+use KaliForms\Inc\Backend\Views\Email_Settings_Page;
 use KaliForms\Inc\Backend\Views\Extensions_Page;
 use KaliForms\Inc\Backend\Views\Metaboxes\Form_Builder;
 use KaliForms\Inc\Frontend\Form_Shortcode;
+use KaliForms\Inc\Utils\Duplicate_Post;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -19,6 +21,7 @@ if (!defined('ABSPATH')) {
  */
 class Forms
 {
+    use Duplicate_Post;
     /**
      * Plugin slug
      *
@@ -50,8 +53,8 @@ class Forms
         add_action('admin_menu', [$this, 'register_submenus']);
         // Saves the metabox
         $this->metabox_save();
+        $this->init_duplicate_post();
     }
-
     /**
      * Registers the extensions submenu
      *
@@ -59,6 +62,14 @@ class Forms
      */
     public function register_submenus()
     {
+        add_submenu_page(
+            'edit.php?post_type=kaliforms_forms',
+            esc_html__('Email Settings', 'kaliforms'),
+            esc_html__('Email Settings', 'kaliforms'),
+            'manage_options',
+            'kaliforms-email-settings',
+            new Email_Settings_Page()
+        );
         add_submenu_page(
             'edit.php?post_type=kaliforms_forms',
             esc_html__('Extensions', 'kaliforms'),
@@ -229,7 +240,26 @@ class Forms
         );
         return $columns;
     }
+    /**
+     * Add a duplicate link to quick actions
+     *
+     * @param [type] $actions
+     * @param [type] $post
+     * @return void
+     */
+    public function add_duplicate_link($actions, $post)
+    {
+        if ($post->post_type === 'kaliforms_forms') {
+            $actions['kaliforms-duplicate'] = sprintf(
+                '<a href="#" data-post-id="%s" class="kaliforms-duplicate-form-link" id="kaliforms-duplicate-%s">%s</a>',
+                $post->ID,
+                $post->ID,
+                esc_html__('Duplicate form', 'kaliforms')
+            );
+        }
 
+        return $actions;
+    }
     /**
      * Edits custom column
      *
@@ -315,7 +345,6 @@ class Forms
             ['id' => 'paypal_client_id_sandbox', 'sanitize' => 'sanitize_text_field']
         );
     }
-
     /**
      * Register the shortcode so we can display it in the frontend
      *

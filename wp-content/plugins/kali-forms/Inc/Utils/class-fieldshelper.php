@@ -49,6 +49,10 @@ trait FieldsHelper
             // $placeholders = $this->get_strings_between($value, '{', '}');
         }
 
+        if ($item['type'] === 'checkbox') {
+            $value = explode(',', $value);
+        }
+        
         return $value;
     }
     /**

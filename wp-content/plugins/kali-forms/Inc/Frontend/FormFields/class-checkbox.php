@@ -55,7 +55,7 @@ class Checkbox extends Form_Field
             $item['id'] = $item['id'] . $i;
             $attributes = $this->generate_attribute_string($item);
             $defaultValue = $this->default_value($item, $item['default']);
-
+			
             is_array($defaultValue)
             ? $checked = in_array($choice->value, $defaultValue) ? 'checked' : ''
             : $checked = $choice->value === $defaultValue ? 'checked' : '';

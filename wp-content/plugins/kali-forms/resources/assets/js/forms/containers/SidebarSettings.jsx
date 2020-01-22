@@ -70,7 +70,7 @@ const SidebarSettings = (props) => {
 		}
 	}
 	const redirectToPricing = event => {
-		window.open('https://www.kaliforms.com/pricing', '_blank');
+		window.open('https://www.kaliforms.com/?utm_source=formSettings&utm_campaign=userInterests&utm_medium=proBadge', '_blank');
 	}
 
 	return (

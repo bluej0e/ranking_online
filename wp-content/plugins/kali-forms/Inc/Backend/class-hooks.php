@@ -55,6 +55,13 @@ class Hooks
             [$this, 'denied']
         );
     }
+    /**
+     * If the user is not authorized, deny action
+     */
+    public function denied()
+    {
+        wp_die(esc_html__('Denied', 'kaliforms'));
+    }
 
     /**
      * Loads the plugin text domain
