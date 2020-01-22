@@ -1,14 +1,14 @@
 === Smush - Compress, Optimize and Lazy Load Images ===
 Plugin Name: Smush - Compress, Optimize and Lazy Load Images
-Version: 3.3.2
+Version: 3.4.2
 Author: WPMU DEV
 Author URI: https://premium.wpmudev.org/
 Contributors: WPMUDEV, alexdunae
 Tags: optimize images, convert webp, lazy load, image, resize, optimize, optimise, compress, performance, optimisation, photography, optimizer
 Requires at least: 4.6
-Tested up to: 5.3.0
-Stable tag: 3.3.2
-Requires PHP: 5.3
+Tested up to: 5.3.2
+Stable tag: 3.4.2
+Requires PHP: 5.6.20
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 Compress and optimize images with lazy load, WebP conversion, and resize detection to boost performance and make your site load amazingly fast.
@@ -17,13 +17,13 @@ Compress and optimize images with lazy load, WebP conversion, and resize detecti
 
 **Optimize your images turn on lazy load, resize, compress and improve your Google Page Speed with the incredibly powerful and 100% free WordPress image smusher, brought to you by the superteam at WPMU DEV!**
 
-And whether you spell it 'optimise' or 'optimize', Smush will compress all your images without a visible drop in quality. 
+And whether you spell it 'optimise' or 'optimize', Smush will compress all your images without a visible drop in quality.
 
 ### Award Winning Image Optimizer
 Smush has been benchmarked and tested number one for speed and quality and is the [award-winning](https://torquemag.io/2018/04/smush-image-compression-wins-2018-plugin-madness/), back-to-back proven crowd favorite image optimization plugin for WordPress.
 
 - Lossless Compression – Strip unused data without affecting image quality
-- Lazy Load -  Defer offscreen images with the flip of a switch
+- Lazy Load - Defer offscreen images with the flip of a switch
 - Bulk Smush – Optimize up to 50 images with one click
 - Image Resizing – Set a max width and height and large images will scale down as they are being compressed
 - Incorrect Size Image Detection – Quickly locate images that are slowing down your site
@@ -49,9 +49,9 @@ Smush meticulously scans every image you upload – or have already added to you
 
 In addition to smushing your media uploads, you may want to compress the images stored in other folders. Smush now lets you compress any image in any directory so that you can optimize all the images on your site – including [NextGEN](https://wordpress.org/plugins/nextgen-gallery/) images, images stored on Amazon S3 using [WP Offload Media](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) and images in EVERY WordPress plugin and theme package!
 
-### Compatible with Your Favorite Media Library Plugins
+### Compatible with Your Favorite Themes, Builders and Media Library Plugins
 
-No matter what plugins you use to better manage your WordPress media library, Smush has you covered. Check out just a few of the plugins Smush is working with to help make your site faster and more efficient:
+No matter what theme or plugins you use to better manage your WordPress media library, Smush has you covered. Check out just a few of the popular products Smush is working with to help make your site faster and more efficient:
 
 - [WP All Import](https://wordpress.org/plugins/wp-all-import/)
 - [WP Offload Media](https://wordpress.org/plugins/amazon-s3-and-cloudfront/)
@@ -59,7 +59,8 @@ No matter what plugins you use to better manage your WordPress media library, Sm
 - [WP Retina 2x](https://wordpress.org/plugins/wp-retina-2x/)
 - [NextGen Gallery](https://wordpress.org/plugins/nextgen-gallery/)
 - [WPML](https://wpml.org/)
-- [WPML Media Translation Add-on](https://wpml.org/2011/05/new-plugin-wpml-media-translation/)
+- [Envira Gallery](https://enviragallery.com/)
+- [Avada Fusion Builder](https://theme-fusion.com/products/fusion-builder/)
 - [Styles](https://wordpress.org/plugins/styles/)
 - And many, many, more!
 
@@ -79,7 +80,7 @@ Smush has lazy load built-in. If your page has a bunch of images below the fold,
 > “Smush helped reduce the total files size on my site and increased browsing speed. Well done guys!” - [pdci](https://wordpress.org/support/users/pdci/)
 
 ★★★★★
->It’s very discrete and does not bother me with an API key or other additional installation steps. The main dashboard of the plugin gives me nice insight. Overall it really fits my needs and I’ll be willing to upgrade to pro if my needs change. I’d recommend it to clients/friends without hesitation. Keep it up! - [tarkan_](https://wordpress.org/support/users/tarkan_/)
+> “It’s very discrete and does not bother me with an API key or other additional installation steps. The main dashboard of the plugin gives me nice insight. Overall it really fits my needs and I’ll be willing to upgrade to pro if my needs change. I’d recommend it to clients/friends without hesitation. Keep it up!” - [tarkan_](https://wordpress.org/support/users/tarkan_/)
 
 ### What about Multisite?
 
@@ -167,11 +168,55 @@ It depends what side of the pond you live on...but whether you say optimize, opt
 
 == Screenshots ==
 
-1. Watch as your image library is processed – up to 50 images at a time.
-2. Set automatic smush to resize and optimize every image as it is uploaded.
-3. Smush will find and optimize images for you.
+1. Simple to get started with the Smush set up wizard.
+2. Watch as your image library is processed – up to 50 images at a time.
+3. Set automatic smush to resize and optimize every image as it is uploaded.
+4. Smush will find and optimize images for you.
 
 == Changelog ==
+
+= 3.4.2 =
+
+- Enhance: Security
+- Fix: Fatal error on WordPress 4.x
+- Fix: Compatibility issue with ReCaptcha and lazy loading
+
+= 3.4.1 =
+
+- Fix: Upgrade from Free to Pro causing an error
+
+= 3.4.0 =
+
+- New: Option to ignore images from Smushing
+- New: CDN support for picture element
+- New: Lazy load for iframes
+- New: Lazy load compatibility with Block Gallery plugin
+- New: Lazy load compatibility with CoBlocks plugin
+- New: smush_cdn_custom_uploads_dir filter for use with custom upload directories in CDN
+- New: CDN support for images in data-original attribute
+- Enhance: Compatibility with WP Engine
+- Enhance: CDN support for custom UPLOADS directories
+- Enhance: Max width detection with CDN auto-resize functionality
+- Enhance: Lazy loading image format detection
+- Enhance: Lazy loading compatibility with AMP
+- Enhance: Lazy loading compatibility with Essential Grid
+- Enhance: Lazy loading compatibility with JetPack
+- Enhance: Integration settings pages UI, summary meta box UI
+- Enhance: Significantly increase performance on sites with large media libraries
+- Enhance: Support for WordPress 4.x
+- Enhance: Compatibility with Oxygen Builder
+- Enhance: Accessibility in modals
+- Fix: Undefined index PHP notices
+- Fix: Lazy loading not properly working on Bootstrap based themes
+- Fix: Lazy loading exclusion rules not working with active CDN
+- Fix: Failed parsing srcset attribute value since its w descriptor is invalid warnings
+- Fix: PHP warnings for getimagesize() disabled wrapper
+- Fix: UI conflict with Store Locator Plus plugin
+- Fix: CDN incorrectly resizing cropped images
+- Fix: Directory Smush permissions
+- Fix: NextGen gallery bulk Smush functionality
+- Fix: Network access control settings
+- Fix: Resize threshold not resetting when auto-resize is disabled
 
 = 3.3.2 =
 
